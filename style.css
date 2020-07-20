@@ -1,0 +1,24 @@
+/*** site header ***/
+
+.site-header{
+   background: darksalmon; 
+   position: sticky;
+   top: 0%;
+   z-index:3; 
+}
+
+.site-header-flex {
+   margin: 0 auto; 
+   display: flex;
+   position: sticky;
+   top:0;
+
+}
+
+.header {
+    background-color: darksalmon;
+    padding:30px;
+    text-align: center;
+    font-size: 35px;
+    color: green;
+}
