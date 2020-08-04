@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    function clickhere(){
+         alert("hi this is my script");
+    }
+
+    function newwindow()
+    {
+        var myWindow = window.open("http://www.google.com","","width=300px;height=200px;");
+      //  myWindow.document.write("<p> A new Window! </p>");
+        myWindow.blur();
+    }
+</script>
+
+<style> 
+* {box-sizing: border-box}
+
+body, html {
+   height: 100%;
+   margin: 0; 
+}
+
+/* create tabs 
+.name -> css class 
+#name -> refer to the html ID */
+.tabs{
+    background-color: beige;
+    color:black;
+    border:none;
+    cursor:pointer;
+    width: 33%;
+    padding: 14px 16px;
+}
+
+.tabs:hover{
+    background-color:cadetblue;
+}
+
+.tabcontent {
+    display:none;
+    padding:100px 20px;
+    height:100%;
+    color:crimson;
+}
+
+#Home {background-color: cyan;}
+#Profile {background-color: darkmagenta;}
+#About {background-color: green;}
+
+</style>
+
+<body>
+    <button class="tabs" > Home </button>
+    <button class="tabs" > Profile </button>
+    <button class="tabs" > About </button>
+
+<div id="Home" class="tabcontent"> 
+    <h2> Home</h2>
+ 
+</div>
+
+<div id="Profile" class="tabcontent"> 
+    <h2> Profile</h2>
+
+   
+    
+
+</div>
+
+<div id="About" class="tabcontent"> 
+    <h2> About</h2>
+   <!-- add a picture and write some content-->
+    <img src="img.jpg">
+
+</div>
+
+<!-- alert-->
+<input style="width:100px;height:100px;" type="button" onclick="clickhere();" > 
+ 
+
+<br>
+
+<a href ="" onclick="newwindow();"> Click the link</a> 
+
+</body>
+
+</html>
