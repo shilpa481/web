@@ -1,89 +1,84 @@
 <!DOCTYPE html>
 <html>
 
-<script>
-    function clickhere(){
-         alert("hi this is my script");
-    }
+<head>
 
-    function newwindow()
-    {
-        var myWindow = window.open("http://www.google.com","","width=300px;height=200px;");
-      //  myWindow.document.write("<p> A new Window! </p>");
-        myWindow.blur();
-    }
-</script>
+    <style>
+        * { box-sizing:border-box;}
 
-<style> 
-* {box-sizing: border-box}
+        body,html{
+            margin:5px;
+            height:100%;
+        }
 
-body, html {
-   height: 100%;
-   margin: 0; 
-}
+        .tabs{
+           background-color:aqua; 
+           color:burlywood;
+           float:left;
+           cursor:pointer;
+           padding: 14px 16px;
+           font-size: 20px;
+           width: 33%;
+        }
 
-/* create tabs 
-.name -> css class 
-#name -> refer to the html ID */
-.tabs{
-    background-color: beige;
-    color:black;
-    border:none;
-    cursor:pointer;
-    width: 33%;
-    padding: 14px 16px;
-}
+        .tabs:hover{
+            background-color:crimson;
+        }
 
-.tabs:hover{
-    background-color:cadetblue;
-}
+        .content{
+            color: white;
+            display:none;
+            padding:100px 20px;
+            height:100%;
+        }
 
-.tabcontent {
-    display:none;
-    padding:100px 20px;
-    height:100%;
-    color:crimson;
-}
+        #Home {background-color: olive;}
+        #Contact {background-color:burlywood; }
+        #About {background-color:blue;}
 
-#Home {background-color: cyan;}
-#Profile {background-color: darkmagenta;}
-#About {background-color: green;}
-
-</style>
+    </style>
+</head>
 
 <body>
-    <button class="tabs" > Home </button>
-    <button class="tabs" > Profile </button>
-    <button class="tabs" > About </button>
 
-<div id="Home" class="tabcontent"> 
-    <h2> Home</h2>
- 
-</div>
+    <botton class="tabs" id="openFirst" onclick="loadTab('Home',this,'olive');"> Home </botton>
+    <botton class="tabs" onclick="loadTab('Contact',this,'burlywood');" > Contact </botton>
+    <botton class="tabs" onclick="loadTab('About',this,'blue');" > About </botton>
 
-<div id="Profile" class="tabcontent"> 
-    <h2> Profile</h2>
+    <div id="Home" class="content"> 
+        <h2> Home page</h2>
 
-   
-    
+    </div>
 
-</div>
+    <div id="Contact" class="content"> 
+        <h2> Contact page</h2>
+        
+    </div>
 
-<div id="About" class="tabcontent"> 
-    <h2> About</h2>
-   <!-- add a picture and write some content-->
-    <img src="img.jpg">
+    <div id="About" class="content"> 
+        <h2> About me!</h2>
+            <!-- Add pictures, story-->
+    </div>
 
-</div>
+    <script>
+       function loadTab(pageName,elmnt,color) {
+  var i, tabcontent, tabs;
+  tabcontent = document.getElementsByClassName("content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tabs = document.getElementsByClassName("tabs");
+  for (i = 0; i < tabs.length; i++) {
+    tabs[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
 
-<!-- alert-->
-<input style="width:100px;height:100px;" type="button" onclick="clickhere();" > 
- 
-
-<br>
-
-<a href ="" onclick="newwindow();"> Click the link</a> 
-
+        //click on the default page
+        document.getElementById("openFirst").click();
+    </script>
 </body>
+
 
 </html>
